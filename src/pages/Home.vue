@@ -1,45 +1,45 @@
 <template>
-  <!-- Wrapper untuk seluruh halaman dengan background warna -->
+  <!-- Wrapper untuk seluruh halaman dengan background biru muda -->
   <div class="main-wrapper">
-    <!-- Container Utama (Kartu Besar) yang menampung semua konten -->
+    <!-- Container Utama dengan background ghost white -->
     <div class="main-container">
-      <!-- Header di dalam Container Utama -->
+      <!-- Header dengan background gradien biru -->
       <header class="main-header">
-        <h1>Dashboard Peremajaan PT Perkebunan Nusantara IV Regional 1</h1>
-        <p>Sistem Informasi Peremajaan Tanaman</p>
+        <h1>Dashboard Pemupukan</h1>
+        <p>Sistem Informasi Pemupukan Tanaman</p>
       </header>
 
-      <!-- Konten dalam bentuk kartu-kartu kecil -->
+      <!-- Konten Utama dengan background ghost white -->
       <main class="main-content">
-        <!-- Kartu untuk Carousel -->
-        <div class="content-card">
+        <!-- Kartu untuk Carousel dengan background ghost white -->
+        <div class="content-card carousel-card">
           <CarouselComponent />
         </div>
 
         <!-- Kartu untuk Pilihan Dashboard -->
-        <div class="content-card">
+        <div class="content-card dashboard-selection-card">
           <div class="section-header">
             <h2>Pilih Dashboard</h2>
+            <div class="section-header-line"></div>
           </div>
           
           <div class="cards-grid">
-            <!-- Card for Tanaman Ulang -->
+            <!-- Card untuk Monitoring Pemupukan dengan background gradien biru -->
             <router-link to="/pemupukan" class="card-link">
-              <div class="dashboard-card card-ulang">
-                <div class="card-header">
-                  <div class="card-shimmer"></div>
-                  <div class="card-initials">Pemupukan</div>
+              <div class="dashboard-card">
+                <div class="card-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
                 </div>
                 <div class="card-body">
-                  <div class="card-meta">
-                    <span class="badge">Pemupukan</span>
-                    <span class="realtime">Real-time</span>
-                  </div>
-                  <h3>Monitoring Pemupukan Tanaman</h3>
-                  <p>Dashboard monitoring untuk kegiatan pemupukan tanaman kelapa sawit.</p>
+                  <h3>Monitoring Pemupukan</h3>
+                  <p>Dashboard untuk memantau kegiatan dan data pemupukan tanaman kelapa sawit secara real-time.</p>
                   <div class="card-footer">
                     <span>Lihat Dashboard</span>
-                    <span class="arrow">→</span>
+                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -63,258 +63,217 @@ export default {
 </script>
 
 <style scoped>
-/* --- GLOBAL & BACKGROUND --- */
+/* --- GLOBAL & FONT --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 :global(body) {
   margin: 0;
   padding: 0;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  background-color: #f0fdf4; /* Hijau sangat pucat (green-50) */
+  background-color: #E9F1FA; /* Latar belakang Biru Muda */
+  color: #374151;
 }
 
 /* --- WRAPPER & CONTAINER UTAMA --- */
 .main-wrapper {
   min-height: 100vh;
-  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 50%, #86efac 100%); /* Gradien hijau segar */
-  padding: 20px;
+  background-color: #E9F1FA; /* Biru Muda */
+  padding: 2rem 1rem;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Konten dimulai dari atas */
+  align-items: flex-start;
 }
 
 .main-container {
   width: 100%;
-  max-width: 1200px; /* Maksimal lebar agar tidak terlalu lebar di layar besar */
-  background-color: #ffffff;
-  border-radius: 24px;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  overflow: hidden; /* Membuat sudut tetap rapi */
-  margin-bottom: 40px;
+  max-width: 1200px;
+  /* Diubah menjadi Ghost White */
+  background-color: #F8F8FF;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  color: #374151; /* Teks default gelap */
 }
 
-/* --- HEADER DI DALAM CONTAINER --- */
+/* --- HEADER MODERN --- */
 .main-header {
-  background: linear-gradient(135deg, #15803d, #166534);
-  color: white;
+  /* Diubah menjadi gradien biru */
+  background: linear-gradient(135deg, #00ABE4, #0077B6);
+  color: #FFFFFF;
   text-align: center;
-  padding: 40px 20px;
+  padding: 3rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .main-header h1 {
-  font-size: 28px;
+  font-size: 2rem;
   font-weight: 700;
-  margin: 0 0 8px 0;
-}
-@media (min-width: 768px) {
-  .main-header h1 {
-    font-size: 36px;
-  }
+  margin: 0 0 0.5rem 0;
+  color: #FFFFFF;
 }
 
 .main-header p {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   margin: 0;
-  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* --- KONTEN UTAMA --- */
 .main-content {
-  padding: 40px 20px;
+  /* Diubah menjadi Ghost White */
+  background-color: #F8F8FF;
+  padding: 2rem 1.5rem;
 }
 
 /* --- KARTU-KARTU KECIL (CONTENT CARD) --- */
 .content-card {
-  background-color: #f9fafb; /* Abu-abu sangat pucat (gray-50) */
-  border: 1px solid #e5e7eb; /* Border abu-abu */
-  border-radius: 16px;
-  padding: 24px;
-  margin-bottom: 32px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  transition: box-shadow 0.3s ease;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-.content-card:hover {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+.carousel-card {
+  background-color: #F8F8FF; /* Ghost White */
+  border: none;
+  padding: 0;
 }
 
-.content-card:last-child {
-  margin-bottom: 0;
+.dashboard-selection-card {
+  background-color: transparent;
+  border: none;
+  padding: 0;
 }
 
-/* --- SECTION HEADER --- */
+/* --- SECTION HEADER DENGAN GARIS PEMISAH --- */
 .section-header {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  margin-bottom: 32px;
+  margin-bottom: 2rem;
 }
 
 .section-header h2 {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 600;
-  color: #1f2937; /* Abu-abu gelap (gray-800) */
-  text-align: center;
-  margin: 0;
+  color: #374151; /* Teks gelap */
+  margin: 0 0 1rem 0;
 }
-@media (min-width: 768px) {
-  .section-header h2 {
-    font-size: 28px;
-  }
+
+.section-header-line {
+  width: 80px;
+  height: 4px;
+  /* Diubah menjadi gradien biru */
+  background: linear-gradient(90deg, #00ABE4, #0077B6);
+  border-radius: 2px;
 }
 
 /* --- GRID UNTUK DASHBOARD CARD --- */
 .cards-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 1.5rem;
+  justify-items: center;
 }
 @media (min-width: 768px) {
   .cards-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
 
-/* --- STYLE UNTUK DASHBOARD CARD (HIJAU) --- */
+/* --- STYLE UNTUK DASHBOARD CARD --- */
 .card-link {
   text-decoration: none;
   color: inherit;
+  display: block;
+  width: 100%;
+  max-width: 500px;
 }
 
 .dashboard-card {
-  background: linear-gradient(to bottom right, #16a34a, #166534);
-  border-radius: 16px;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  /* Diubah menjadi gradien biru */
+  background: linear-gradient(135deg, #00ABE4, #0077B6);
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Border putih semi-transparan */
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
   height: 100%;
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(34, 197, 94, 0.3);
-}
-
-.dashboard-card.card-konversi {
-  background: linear-gradient(to bottom right, #166534, #14532d);
-  border-color: rgba(22, 101, 52, 0.3);
+  align-items: center;
 }
 
 .card-link:hover .dashboard-card {
   transform: translateY(-8px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  border-color: #FFFFFF;
 }
 
-.card-header {
-  height: 140px;
-  background: linear-gradient(to bottom right, #22c55e, #166534);
+/* Ikon di dalam kartu */
+.card-icon {
+  width: 64px;
+  height: 64px;
+  background-color: rgba(255, 255, 255, 0.2); /* Background putih semi-transparan */
+  color: #FFFFFF; /* Ikon putih */
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-@media (min-width: 768px) {
-  .card-header {
-    height: 160px;
-  }
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
 }
 
-.card-konversi .card-header {
-  background: linear-gradient(to bottom right, #16a34a, #14532d);
+.card-icon svg {
+  width: 32px;
+  height: 32px;
 }
 
-.card-initials {
-  font-size: 42px;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.9);
-  position: relative;
-  z-index: 2;
-}
-@media (min-width: 768px) {
-  .card-initials {
-    font-size: 48px;
-  }
+.card-link:hover .card-icon {
+  background-color: #FFFFFF; /* Background putih saat hover */
+  color: #00ABE4; /* Ikon biru saat hover */
 }
 
-.card-shimmer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(250, 204, 21, 0.2), transparent);
-  transform: skewX(-12deg) translateX(-100%);
-  transition: transform 1s ease-out;
-}
-
-.card-link:hover .card-shimmer {
-  transform: skewX(-12deg) translateX(100%);
-}
-
-.card-body {
-  padding: 20px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.card-meta {
-  display: flex;
-  align-items: center;
-  margin-bottom: 12px;
-}
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 4px 12px;
-  border-radius: 9999px;
-  font-size: 12px;
-  font-weight: 500;
-  background-color: rgba(250, 204, 21, 0.3);
-  color: #fef3c7;
-  backdrop-filter: blur(4px);
-}
-
-.realtime {
-  margin-left: auto;
-  font-size: 12px;
-  color: rgba(220, 252, 231, 0.8);
-}
-
+/* Isi kartu */
 .card-body h3 {
-  font-size: 18px;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 0 0 8px 0;
-}
-@media (min-width: 768px) {
-  .card-body h3 {
-    font-size: 20px;
-  }
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #FFFFFF; /* Teks putih */
+  margin: 0 0 0.5rem 0;
 }
 
 .card-body p {
-  color: rgba(220, 252, 231, 0.9);
-  font-size: 14px;
-  margin: 0 0 16px 0;
+  color: rgba(255, 255, 255, 0.9); /* Putih dengan sedikit transparansi */
+  font-size: 0.875rem;
+  margin: 0 0 1.5rem 0;
   flex-grow: 1;
 }
 
+/* Footer kartu (link) */
 .card-footer {
   display: flex;
   align-items: center;
-  color: #facc15;
-  font-weight: 500;
-  font-size: 16px;
+  justify-content: center;
+  color: #FFFFFF; /* Teks putih */
+  font-weight: 600;
+  font-size: 0.875rem;
   transition: color 0.3s ease;
 }
 
 .card-link:hover .card-footer {
-  color: #fde047;
+  color: rgba(255, 255, 255, 0.8);
 }
 
-.arrow {
-  margin-left: 8px;
-  font-size: 18px;
+.arrow-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.card-link:hover .arrow-icon {
+  transform: translateX(4px);
 }
 </style>
